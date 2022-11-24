@@ -30,7 +30,10 @@ public class KafkaProducerApplication {
         properties.setProperty("bootstrap.servers", "pkc-56d1g.eastus.azure.confluent.cloud:9092");
         properties.setProperty("security.protocol", "SASL_SSL");
         properties.setProperty("sasl.mechanism", "PLAIN");
-        properties.setProperty("sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username='STPQKAUBDEDHJZO7' password='syw34YAg4MWWzuYHajQn+Ft1JCSqBrkmd0DIWhfIDavhGoVq3ht94MmTbAIyLrw4';");
+
+        // Replace the key and password below.
+        properties.setProperty("sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username='DUMMY_KEY_SSTPQKAUBDEDHJZO7' password='DUMMY_PASSWORD_ssyw34YAg4MWWzuYHajQn+Ft1JCSqBrkmd0DIWhfIDavhGoVq3ht94MmTbAIyLrw4';");
+
         properties.setProperty("key.serializer", StringSerializer.class.getName());
         properties.setProperty("value.serializer", StringSerializer.class.getName());
 
