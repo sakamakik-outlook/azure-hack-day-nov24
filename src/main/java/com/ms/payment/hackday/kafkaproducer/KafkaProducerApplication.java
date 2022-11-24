@@ -22,17 +22,13 @@ import java.util.Arrays;
 import java.util.Properties;
 import java.util.UUID;
 
+import static com.ms.payment.hackday.kafkaproducer.KafkaConfigProps.getDefaultProps;
+
 public class KafkaProducerApplication {
 
     public static void main(String[] args) {
 
-        Properties properties = new Properties();
-        properties.setProperty("bootstrap.servers", "pkc-56d1g.eastus.azure.confluent.cloud:9092");
-        properties.setProperty("security.protocol", "SASL_SSL");
-        properties.setProperty("sasl.mechanism", "PLAIN");
-
-        // Replace the key and password below.
-        properties.setProperty("sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username='DUMMY_KEY_SSTPQKAUBDEDHJZO7' password='DUMMY_PASSWORD_ssyw34YAg4MWWzuYHajQn+Ft1JCSqBrkmd0DIWhfIDavhGoVq3ht94MmTbAIyLrw4';");
+        var properties = getDefaultProps();
 
         properties.setProperty("key.serializer", StringSerializer.class.getName());
         properties.setProperty("value.serializer", StringSerializer.class.getName());
