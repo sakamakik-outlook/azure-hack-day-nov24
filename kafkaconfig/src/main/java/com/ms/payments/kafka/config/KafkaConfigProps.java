@@ -1,12 +1,20 @@
 package com.ms.payments.kafka.config;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+
 import java.util.Properties;
 
+@Configuration
 public class KafkaConfigProps {
-    public static Properties getDefaultProps(){
+
+    @Value("${bootstrap.servers}")
+    String bootStrapServers;
+
+    public Properties getDefaultProps(){
 
         Properties properties = new Properties();
-        properties.setProperty("bootstrap.servers", "pkc-56d1g.eastus.azure.confluent.cloud:9092");
+        properties.setProperty("bootstrap.servers", bootStrapServers);
         properties.setProperty("security.protocol", "SASL_SSL");
         properties.setProperty("sasl.mechanism", "PLAIN");
 

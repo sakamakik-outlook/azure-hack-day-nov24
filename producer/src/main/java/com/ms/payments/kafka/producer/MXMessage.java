@@ -1,8 +1,8 @@
 package com.ms.payments.kafka.producer;
 
-public class MessageString {
+public class MXMessage {
 
-    public static final String PACS008= """
+    public static final String PACS008_TEMPLATE = """
             <?xml version="1.0" encoding="UTF-8"?>
             <Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.04" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.04 file://BE-FILE01/tverschu$/SR%20(Standards%20Release)/SR2013/ISO/Payments%20Clearing%20and%20settlement/SR2013_MX_Schemas_PaymentsClearingAndSettlement/pacs.008.001.04.xsd">
             	<FIToFICstmrCdtTrf>

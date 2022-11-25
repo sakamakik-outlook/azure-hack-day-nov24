@@ -10,8 +10,7 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
 def javaProjects = [
-        project(':kafkaconfig'),
-        project(':kafkaproducer')
+        project(':producer')
 ]
 
 allprojects {
@@ -49,3 +48,5 @@ bootJar {
 jar {
     enabled = true
 }
+
+
