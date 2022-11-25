@@ -10,7 +10,8 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
 def javaProjects = [
-        project(':producer')
+        project(':producer'),
+        project(':servicebus')
 ]
 
 allprojects {

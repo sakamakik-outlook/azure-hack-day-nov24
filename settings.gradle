@@ -1,5 +1,4 @@
 rootProject.name = 'kafka-producer'
-include 'kafkaconfig'
 include 'producer'
 include 'servicebus'
 
