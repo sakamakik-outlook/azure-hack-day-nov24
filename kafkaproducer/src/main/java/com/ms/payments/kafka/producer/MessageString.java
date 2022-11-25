@@ -1,4 +1,4 @@
-package com.ms.payment.hackday.kafkaproducer;
+package com.ms.payments.kafka.producer;
 
 public class MessageString {
 
