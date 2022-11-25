@@ -1,0 +1,4 @@
+
+dependencies {
+    implementation 'com.azure:azure-messaging-servicebus:7.13.0'
+}

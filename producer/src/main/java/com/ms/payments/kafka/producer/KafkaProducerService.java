@@ -20,27 +20,23 @@ public class KafkaProducerService implements CommandLineRunner {
 
     @Value("${boot.strap.servers}")
     String bootStrapServers;
-
     @Value("${sasl.jaas.config}")
     String saslJaasConfig;
-
     @Value("${security.protocol}")
     String securityProtocol;
-
     @Value("${sasl.mechanism}")
     String saslMechanism;
-
     @Value("${key.serializer}")
     String keySerializer;
-
     @Value("${value.serializer}")
     String valueSerializer;
-
+    @Value("${kafka.topic}")
+    String topic;
     @Value("${message.count}")
     int messageCount;
-
     @Value("${sleep.interval.milsec}")
     int sleepIntMilsec;
+
 
 
     KafkaProducer<String, String> producer;
@@ -64,7 +60,7 @@ public class KafkaProducerService implements CommandLineRunner {
         for (int i = 0; i < messageCount; i++) {
             var key = UUID.randomUUID().toString();
             var value = MXMessage.PACS008_TEMPLATE.replace("_MESSAGE_KEY_", key);
-            producer.send(new ProducerRecord<>("safety_outbound", key, value)).get();
+            producer.send(new ProducerRecord<>(topic, key, value)).get();
             System.out.println("Message sent : " + i);
             TimeUnit.MILLISECONDS.sleep(sleepIntMilsec);
         }
