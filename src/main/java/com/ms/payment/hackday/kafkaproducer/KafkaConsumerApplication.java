@@ -19,7 +19,10 @@ public class KafkaConsumerApplication {
 
         properties.setProperty("key.deserializer", StringDeserializer.class.getName());
         properties.setProperty("value.deserializer", StringDeserializer.class.getName());
-        properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG,"kensaka-test");
+        properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG,"kensaka-test-2");
+        properties.setProperty("auto.offset.reset", "earliest");
+
+
 
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
 

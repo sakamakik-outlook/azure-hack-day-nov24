@@ -11,7 +11,7 @@ public class KafkaConfigProps {
         properties.setProperty("sasl.mechanism", "PLAIN");
 
         // Replace the key and password below.
-        properties.setProperty("sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username='STPQKAUBDEDHJZO7' password='syw34YAg4MWWzuYHajQn+Ft1JCSqBrkmd0DIWhfIDavhGoVq3ht94MmTbAIyLrw4';");
+        properties.setProperty("sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username='DUMMY_ID_SSTPQKAUBDEDHJZO7' password='DUMMY_ID_Ssyw34YAg4MWWzuYHajQn+Ft1JCSqBrkmd0DIWhfIDavhGoVq3ht94MmTbAIyLrw4';");
 
         return properties;
 
